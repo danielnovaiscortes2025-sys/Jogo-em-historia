@@ -1,0 +1,173 @@
+:root {
+    /* Paleta temática inspirada no Focus e na natureza de Horizon */
+    --bg-body: #070b14;
+    --bg-surface: #0d1527;
+    --bg-surface-elevated: #131e38;
+    --bg-card: rgba(19, 30, 56, 0.75);
+    --bg-card-hover: rgba(26, 41, 74, 0.9);
+
+    /* Cores de destaque e acento */
+    --brand-cyan: #00e5ff;
+    --brand-cyan-glow: rgba(0, 229, 255, 0.35);
+    --brand-amber: #f59e0b;
+
+    /* Tipografia e cores de texto */
+    --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Space Grotesk', 'Outfit', sans-serif;
+    --text-heading: #f8fafc;
+    --text-body: #cbd5e1;
+
+    /* Bordas e sombras */
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-highlight: rgba(0, 229, 255, 0.4);
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 25px rgba(0, 229, 255, 0.25);
+
+    /* Raios de borda e transição */
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    --container-max-width: 900px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0 20px 60px;
+    background-color: var(--bg-body);
+    color: var(--text-body);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Título principal */
+.titulo {
+    max-width: var(--container-max-width);
+    text-align: center;
+    background-image: url("imagens/titulo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--bg-surface-elevated);
+    border: 1px solid var(--border-highlight);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glow);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.titulo h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    color: var(--text-heading);
+    text-shadow: 0 0 18px var(--brand-cyan-glow);
+}
+
+/* Layout imagem + texto lado a lado */
+.section-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.section-content img {
+    width: 45%;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    margin: 0;
+}
+
+.section-content p {
+    flex: 1;
+    margin: 0;
+}
+
+/* Conteúdo */
+main {
+    display: grid;
+    gap: 28px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+section {
+    padding: 24px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+}
+
+section:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-highlight);
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-align: left;
+    color: var(--brand-cyan);
+}
+
+p {
+    margin: 0 0 14px;
+    max-width: 70ch;
+    text-align: left;
+    color: var(--text-body);
+}
+
+ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    max-width: 70ch;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+li::marker {
+    color: var(--brand-amber);
+}
+
+/* Imagens */
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 18px;
+    border-radius: var(--radius-md);
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    body {
+        padding: 0 12px 40px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+
+    .section-content img {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    section {
+        transition: none;
+    }
+}
