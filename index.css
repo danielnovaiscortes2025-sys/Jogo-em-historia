@@ -164,3 +164,48 @@ img {
         transition: none;
     }
 }
+
+/* Ajuste para celulares */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    p {
+        overflow-wrap: break-word;
+    }
+}
