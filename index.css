@@ -49,6 +49,8 @@ body {
 /* Título principal */
 .titulo {
     max-width: var(--container-max-width);
+    margin: 40px auto 20px;
+    padding: 40px;
     text-align: center;
     background-image: url("imagens/titulo.jpg");
     background-size: cover;
@@ -64,7 +66,8 @@ body {
 }
 
 .titulo h1 {
-    margin: 0;
+    margin: 0 auto 0 0;
+    text-align: center;
     font-family: var(--font-display);
     font-size: clamp(2rem, 6vw, 3.25rem);
     color: var(--text-heading);
@@ -125,16 +128,6 @@ p {
     max-width: 70ch;
     text-align: left;
     color: var(--text-body);
-}
-
-ul {
-    margin: 0 0 14px;
-    padding-left: 22px;
-    max-width: 70ch;
-}
-
-li {
-    margin-bottom: 6px;
 }
 
 li::marker {
