@@ -189,6 +189,10 @@ p {
     font-family: var(--font-display);
     text-align: justify;
 }
+.section-content{
+    color: var(--text-body);
+    text-align: justify;
+}
 img {
     max-width: 100%;
     height: auto;
